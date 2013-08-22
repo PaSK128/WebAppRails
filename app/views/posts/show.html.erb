@@ -1,17 +1,13 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
  
 <p>
-  <strong>Text:</strong>
+  <strong>Status:</strong>
   <%= @post.text %>
 </p>
  
-<h2>Comments</h2>
+<h4>Comments</h4>
 <%= render @post.comments %>
  
-<h2>Add a comment:</h2>
+<h4>Add a comment:</h4>
 <%= render "comments/form" %>
  
 <%= link_to 'Edit Post', edit_post_path(@post) %> |

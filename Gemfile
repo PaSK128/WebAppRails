@@ -49,3 +49,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "twitter-bootstrap-rails"
+gem "jquery-ui-rails"
+gem "designmodo-flatuipro-rails"

@@ -1,20 +1,30 @@
-<h1>Listing posts</h1>
-<%= link_to 'New post', new_post_path %>
+
+<h1>Profile Section Here<h1>
+<br>
+<div style="width: 128px; height: 128px; background-color:#CCCCCC;">
+	<%= image_tag("46405.jpg", size: "88x110", alt: "Edit Entry") %>
+</div>
+<br/>
+<div>Pasit Kongkunakornkul</div>
+<p>Education : Chulalongkorn University<br/>Hobbies : Play Games<br/>Birthday : 12 June 1992<br/>Relationship Status : Single</p>
+<br>
+<h1>TimeLine</h1>
+<%= link_to 'Post New Status', new_post_path %><br><br>
+
+
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th>Status</th>
     <th></th>
     <th></th>
   </tr>
  
 <% @posts.each do |post| %>
   <tr>
-    <td><%= post.title %></td>
     <td><%= post.text %></td>
-    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Show Comments', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
-	<td><%= link_to 'Destroy', post_path(post),
+	<td><%= link_to 'Delete', post_path(post),
                     method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
