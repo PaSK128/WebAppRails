@@ -1,33 +1,38 @@
+<div class="navbar navbar-inner" style="padding:10px;"><h4><strong>MyBook</strong></h4></div>
+<br/><table width="90%" align="center"><tr><td>
+<div class="label label-inverse"><h3>&nbsp;Profile&nbsp;</h3></div>
+<div class="alert alert-info">
+<div class="iconbar" style="width: 138px; height: 128px; background-color:#CCCCCC; display:inline-block;">
+	<center><%= image_tag("profile-1.jpg", size: "128x128", alt: "Edit Entry") %></center>
+</div>
+<div style="display:inline-block; margin-left:10px;"><h4>Pasit Kongkunakornkul</h4><br/>Education : Chulalongkorn University<br/>Hobbies : Play Games<br/>Birthday : 12 June 1992<br/>Relationship Status : Single</div>
+</div>
+</td></tr></table>
 
-<div class="pager"><h3>&nbsp;Profile&nbsp;</h3></div>
-<div>
-<div style="width: 128px; height: 128px; background-color:#CCCCCC; display:inline-block; vertical-align:top;">
-	<%= image_tag("46405.jpg", size: "88x110", alt: "Edit Entry") %>
-</div>
-<div style="display:inline-block"><h4>Pasit Kongkunakornkul</h4><br/>Education : Chulalongkorn University<br/>Hobbies : Play Games<br/>Birthday : 12 June 1992<br/>Relationship Status : Single</div>
-</div>
 <br>
-<h3>TimeLine</h3>
-<%= link_to 'Post New Status', new_post_path %><br><br>
 
 
-<table>
+
+<table width="90%" align="center">
   <tr>
-    <th>Status</th>
-    <th></th>
-    <th></th>
+    <td colspan="3"><div>
+<div class="label label-info" style="margin-bottom:10px;"><h3>&nbsp;Timeline&nbsp;</h3></div>
+<div class="btn btn-small btn-primary" style="background-color:#EEEEEE; display:inline-block; "><%= link_to 'Post New Status', new_post_path %></div>
+</div></td>
   </tr>
  
 <% @posts.each do |post| %>
   <tr>
-    <td><%= post.text %></td>
-    <td><%= link_to 'Show Comments', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td>
+	<table class="table table-striped"><tr><td colspan="3"><%= post.text %></td></tr>
+	<tr><td width="120"><%= link_to 'Show Comments', post %></td>
+    	<td width="70"><%= link_to 'Edit', edit_post_path(post) %></td>
 	<td><%= link_to 'Delete', post_path(post),
-                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td></tr></table>
+    </td>
   </tr>
 <% end %>
 </table>
 
 
-  <%= link_to 'Back', root_path %>
+<center><div class="btn btn-small btn-primary" style="background-color:#EEEEEE;"><%= link_to 'Back', root_path %></div></center><br/>
