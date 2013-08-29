@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20130820033333) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
   create_table "posts", force: true do |t|
-    t.string   "title"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
